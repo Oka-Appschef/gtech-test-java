@@ -30,7 +30,7 @@ public class SalesOrderRepository {
                 "    so.created_at AS sales_order_created_at," +
                 "    so.updated_at AS sales_order_updated_at," +
                 "    sod.id AS detail_id," +
-                "    sod.transaction_id," +
+                "    sod.sales_order_id," +
                 "    sod.product_id," +
                 "    sod.product_variant_id," +
                 "    sod.price," +
@@ -44,7 +44,7 @@ public class SalesOrderRepository {
                 "    sod.created_at AS detail_created_at," +
                 "    sod.updated_at AS detail_updated_at " +
                 " FROM sales_order so " +
-                " LEFT JOIN sales_order_detail sod ON sod.transaction_id = so.id " +
+                " LEFT JOIN sales_order_detail sod ON sod.sales_order_id = so.id " +
                 " ORDER BY so.id, sod.id;";
         return jdbcTemplate.query(sql,new SalesOrderResponse());
     }
@@ -60,7 +60,7 @@ public class SalesOrderRepository {
                 "FROM  " +
                 "    sales_order_detail sod " +
                 "JOIN " +
-                "    sales_order so ON sod.transaction_id = so.id " +
+                "    sales_order so ON sod.sales_order_id = so.id " +
                 "JOIN  " +
                 "    product_variant pv ON sod.product_variant_id = pv.id " +
                 "JOIN  " +
