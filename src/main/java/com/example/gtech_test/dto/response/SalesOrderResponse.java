@@ -42,7 +42,7 @@ public class SalesOrderResponse implements ResultSetExtractor<List<SalesOrder>> 
             if (detailId > 0) {
                 SalesOrderDetail detail = new SalesOrderDetail();
                 detail.setId(detailId);
-                detail.setTransactionId(rs.getInt("sales_order_id"));
+                detail.setSalesOrderId(rs.getInt("sales_order_id"));
                 detail.setProductId(rs.getInt("product_id"));
                 detail.setProductVariantId(rs.getInt("product_variant_id"));
                 detail.setPrice(rs.getDouble("price"));

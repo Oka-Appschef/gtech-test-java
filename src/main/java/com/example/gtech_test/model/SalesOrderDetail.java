@@ -16,7 +16,7 @@ public class SalesOrderDetail {
     private Integer id;
 
     @Column(name = "sales_order_id")
-    private Integer transactionId;
+    private Integer salesOrderId;
 
     @Column(name = "product_id")
     private Integer productId;
@@ -70,12 +70,12 @@ public class SalesOrderDetail {
         this.id = id;
     }
 
-    public Integer getTransactionId() {
-        return transactionId;
+    public Integer getSalesOrderId() {
+        return salesOrderId;
     }
 
-    public void setTransactionId(Integer transactionId) {
-        this.transactionId = transactionId;
+    public void setSalesOrderId(Integer salesOrderId) {
+        this.salesOrderId = salesOrderId;
     }
 
     public Integer getProductId() {
