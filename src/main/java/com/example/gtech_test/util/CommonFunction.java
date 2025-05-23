@@ -2,11 +2,14 @@ package com.example.gtech_test.util;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CommonFunction {
+
+    private CommonFunction(){
+
+    }
     public static String getDateTime(Timestamp date) {
         return date==null ? null : getDateFrom(date, "yyyy-MM-dd HH:mm:ss");
     }
