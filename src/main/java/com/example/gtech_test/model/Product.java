@@ -1,5 +1,6 @@
 package com.example.gtech_test.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
@@ -12,8 +13,14 @@ public class Product {
 
     @Id
     private Integer id;
+
+    @Column(name = "product_name")
     private String productName;
+
+    @Column(name = "created_at")
     private String createdAt;
+
+    @Column(name = "created_at")
     private String updatedAt;
 
     @OneToMany(mappedBy = "mainProduct")

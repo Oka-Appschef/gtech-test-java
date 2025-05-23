@@ -1,5 +1,8 @@
 package com.example.gtech_test.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import org.springframework.data.annotation.Id;
@@ -11,11 +14,22 @@ public class ProductVariant {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "variant_name")
     private String variantName;
+
+    @Column(name = "price")
     private Double price;
+
+    @Column(name = "stock")
     private Integer stock;
+
+    @Column(name = "created_at")
     private String createdAt;
+
+    @Column(name = "updated_at")
     private String updatedAt;
 
 
